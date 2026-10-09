@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://c0bft03plnr31"]
 
+[ext_resource type="Script" uid="uid://bqwyun5yxheia" path="res://scene/collectable.gd" id="1_28dhl"]
 [ext_resource type="Texture2D" uid="uid://bvknb0g1m2wum" path="res://Apple.png" id="1_cvn2h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_28dhl"]
@@ -130,14 +131,21 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5h11f"]
-radius = 6.0
+radius = 8.0
 
 [node name="Collectable" type="Area2D" unique_id=94491932]
+script = ExtResource("1_28dhl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1266900175]
 texture_filter = 1
+position = Vector2(7.5, -3.5)
+scale = Vector2(1.46875, 1.21875)
 sprite_frames = SubResource("SpriteFrames_5h11f")
-frame_progress = 0.24090505
+autoplay = "default"
+frame_progress = 0.82181025
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1426040482]
+position = Vector2(7, -4)
 shape = SubResource("CircleShape2D_5h11f")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
