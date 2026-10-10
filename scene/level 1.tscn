@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c0bft03plnr31" path="res://scene/collectable.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://cmv10fnlipcsd" path="res://checkpoint.tscn" id="5_7mycd"]
 [ext_resource type="Script" uid="uid://bfnlaclunui7a" path="res://game_manager.gd" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://dpw1ekw8dnboq" path="res://scene/level 2.tscn" id="6_k6pdc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7mycd"]
 texture = ExtResource("2_1bvp3")
@@ -231,6 +232,7 @@ position = Vector2(2591, 264)
 
 [node name="Area2D" parent="Scene Objects" unique_id=638245009 instance=ExtResource("5_7mycd")]
 position = Vector2(2614, 544)
+target_level = ExtResource("6_k6pdc")
 
 [node name="GameManager" type="Node" parent="." unique_id=118593927]
 unique_name_in_owner = true

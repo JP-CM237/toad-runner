@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="toad runner"
-run/main_scene="uid://dmp1fwdxek4d8"
+run/main_scene="uid://d3vihy5xhpwkn"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
