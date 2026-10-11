@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://cmv10fnlipcsd" path="res://checkpoint.tscn" id="5_7mycd"]
 [ext_resource type="Script" uid="uid://bfnlaclunui7a" path="res://game_manager.gd" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://dpw1ekw8dnboq" path="res://scene/level 2.tscn" id="6_k6pdc"]
+[ext_resource type="PackedScene" uid="uid://p0bs86ufnbkg" path="res://scene/enemy.tscn" id="7_eqy3t"]
+[ext_resource type="Texture2D" uid="uid://b0fx5ns1s0meu" path="res://Item 3-1.png.png" id="8_s0vsx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7mycd"]
 texture = ExtResource("2_1bvp3")
@@ -175,7 +177,7 @@ texture = ExtResource("2_1bvp3")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_7mycd")
 
-[node name="Node" type="Node" unique_id=565530000]
+[node name="Node2" type="Node" unique_id=565530000]
 
 [node name="Scene Objects" type="Node" parent="." unique_id=894493061]
 
@@ -230,9 +232,20 @@ position = Vector2(2062, 66)
 [node name="Collectable7" parent="Scene Objects/Collectables group" unique_id=279160293 instance=ExtResource("4_1bvp3")]
 position = Vector2(2591, 264)
 
-[node name="Area2D" parent="Scene Objects" unique_id=638245009 instance=ExtResource("5_7mycd")]
+[node name="checkpoint" parent="Scene Objects" unique_id=638245009 instance=ExtResource("5_7mycd")]
 position = Vector2(2614, 544)
 target_level = ExtResource("6_k6pdc")
+
+[node name="Enemies" type="Node" parent="Scene Objects" unique_id=1885398695]
+
+[node name="Enemy" parent="Scene Objects/Enemies" unique_id=170548283 instance=ExtResource("7_eqy3t")]
+position = Vector2(639, 510)
+
+[node name="Enemy2" parent="Scene Objects/Enemies" unique_id=1532777181 instance=ExtResource("7_eqy3t")]
+position = Vector2(1959, 242)
+
+[node name="Enemy3" parent="Scene Objects/Enemies" unique_id=2098355196 instance=ExtResource("7_eqy3t")]
+position = Vector2(1262, 527)
 
 [node name="GameManager" type="Node" parent="." unique_id=118593927]
 unique_name_in_owner = true
@@ -256,3 +269,35 @@ grow_horizontal = 2
 grow_vertical = 2
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Hearts" type="Panel" parent="UI" unique_id=1837229699]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -240.0
+offset_right = -44.0
+offset_bottom = 64.0
+grow_horizontal = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Hearts" unique_id=947631073]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 64.0
+
+[node name="Heart" type="TextureRect" parent="UI/Hearts/HBoxContainer" unique_id=310454017]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("8_s0vsx")
+stretch_mode = 3
+
+[node name="Heart2" type="TextureRect" parent="UI/Hearts/HBoxContainer" unique_id=732337223]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("8_s0vsx")
+stretch_mode = 3
+
+[node name="Heart3" type="TextureRect" parent="UI/Hearts/HBoxContainer" unique_id=103428514]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("8_s0vsx")
+stretch_mode = 3
